@@ -1,0 +1,91 @@
+// Odd number in an array
+// (function(arr) {
+//     arr.forEach(function(num) {
+//         if (num % 2 !== 0) {
+//             console.log(num);
+//         }
+//     });
+// })([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+//convert all the strings to title caps in an string array
+
+// (function (strings) {
+//   var titleCasedStrings = strings.map(function (str) {
+//     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+//   });
+
+//   console.log(titleCasedStrings);
+// });
+// (["hello", "world", "example"]);
+
+//3.sum of all numbers in an array:-
+
+// var numbers = [1, 2, 3, 4, 5];
+// var sum = numbers.reduce(function (accumulator, current) {
+//   return accumulator + current;
+// }, 0);
+
+// console.log("Sum:", sum);
+
+//4.return all the prime number numbers in an array:-
+
+// function isPrime(num) {
+//   if (num <= 1) {
+//     return false;
+//   }
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// function getPrimeNumbers(arr) {
+//   return arr.filter(function (num) {
+//     return isPrime(num);
+//   });
+// }
+
+// var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// var primeNumbers = getPrimeNumbers(numbers);
+
+// console.log("Prime Numbers:", primeNumbers);
+
+//5.Return all the palindromes in an array:-
+
+// (function (arr) {
+//   function isPalindrome(str) {
+//     return str === str.split("").reverse().join("");
+//   }
+
+//   var palindromes = arr.filter(function (word) {
+//     return isPalindrome(word);
+//   });
+
+//   console.log("Palindromes:", palindromes);
+// });
+// ["level", "hello", "radar", "world", "madam"];
+
+//6. return median of two sorted arrays of the same size:-
+
+(function (arr1, arr2) {
+  var combinedArray = arr1.concat(arr2);
+  combinedArray.sort(function (a, b) {
+    return a - b;
+  });
+
+  var length = combinedArray.length;
+  var median;
+
+  if (length % 2 === 0) {
+    // If the combined array has an even length, average the middle two elements
+    median = (combinedArray[length / 2 - 1] + combinedArray[length / 2]) / 2;
+  } else {
+    // If the combined array has an odd length, take the middle element
+    median = combinedArray[Math.floor(length / 2)];
+  }
+
+  console.log("Median:", median);
+})([1, 3, 5], [2, 4, 6]);
